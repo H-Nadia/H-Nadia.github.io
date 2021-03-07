@@ -2,8 +2,8 @@ var contenaire = document.getElementById("contenaire");
 var acceuil = document.getElementById("accueil");
 var cours = document.getElementById("cours");
 var objectif = document.getElementById("objectif");
-var histoire = document.getElementById("histoire");
-var tech = document.getElementById("tech");
+//var histoire = document.getElementById("histoire");
+//var tech = document.getElementById("tech");
 
 
 var accueilContent = `
@@ -87,7 +87,7 @@ var objectifContent = `
 <ul>
   <li>Utilisant ce que j'ai appris pendant le Cours/TD et TP du module de Technologie Du web. J'ai cree ce site web.</li>
   <li>Acquérir plus de connaissaces en Developement Web.</li>
-  <li>blabla</li>
+  <li>Connaître comment héberger un site web, le configurer, et le publier sur internet.</li>
 </ul>
 </div>
 `;
@@ -95,13 +95,11 @@ var objectifContent = `
 var histoireContent = `
 <div class="card text">
 <h1>Histoire</h1>
-<ul>
-  <li>k</li>
-  <li>s</li>
-  <li>s</li>
-</ul>
+<br>
+<p style="text-align: center;">
+J'ai crée ce site web sous la demande de notre Prof. Monsieur Souidi, La Faculté de Sciences à Rabat
+</p>
 </div>
-
 `;
 
 var techContent = `
@@ -120,8 +118,8 @@ var unsetActive = () => {
     acceuil.classList.remove("active");
     cours.classList.remove("active");
     objectif.classList.remove("active");
-    histoire.classList.remove("active");
-    tech.classList.remove("active");
+//    histoire.classList.remove("active");
+//    tech.classList.remove("active");
     document.body.style.background="linear-gradient(to bottom right, #333333, #ffffff)";
 };
 
@@ -135,16 +133,20 @@ cours.addEventListener('click', e => {
     unsetActive();
     contenaire.innerHTML = coursContent;
     cours.classList.add("active");
-    document.body.style.background = "white";
+    document.body.style.background = "#dedede";
 });
 
 objectif.addEventListener('click', e => {
     unsetActive();
     contenaire.innerHTML = objectifContent;
+    contenaire.innerHTML += histoireContent;
+    contenaire.innerHTML += techContent;
+    contenaire.innerHTML += "<br><br><br><br><br>";
     objectif.classList.add("active");
+    document.body.style.background = "#dedede";
 });
 
-histoire.addEventListener('click', e => {
+/*histoire.addEventListener('click', e => {
     unsetActive();
     contenaire.innerHTML = histoireContent;
     histoire.classList.add("active");
@@ -155,3 +157,4 @@ tech.addEventListener('click', e => {
     contenaire.innerHTML = techContent;
     tech.classList.add("active");
 });
+*/
